@@ -2,3 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "~react-responsive-carousel/lib/styles/carousel.min.css";

@@ -6,7 +6,7 @@ import FullPost from "@/components/ProjectComponents/FullPost";
 import MakePost from "@/components/MainComponents/MakePost";
 import ProjectCard from "@/components/ProjectComponents/ProjectCard";
 import Signup from "@/app/pages/registration/Signup";
-import HeroPage from '@/components/MainComponents/HeroPage'
+import LandingPage from "@/components/MainComponents/LandingPage";
 
 //bg-gradient-to-br from-gray-700 from-0% via-emerald-500 via-25% via-emerald-500 via-50% to-cyan-900 to-90% 
 
@@ -14,14 +14,14 @@ import HeroPage from '@/components/MainComponents/HeroPage'
 
 export default function Home() {
   return (
-    // <main className="bg-gradient-to-br from-gray-700 from-0% via-cyan-900 via-40%  to-gray-900 to-90% flex min-h-screen flex-row flex-wrap items-center justify-between p-24 w-full h-full">
-    //   <div className="flex-grow w-full h-full items-center justify-center">
-        <div>
-        <Dashboard />
+    <main className="bg-gradient-to-br from-gray-700 from-0% via-cyan-900 via-40%  to-gray-900 to-90% flex min-h-screen flex-row flex-wrap items-center justify-between p-24 w-full h-full">
+      <div className="flex-grow w-full h-full items-center justify-center">
+        
+        <LandingPage />
       </div>
-   
+      <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
 
-    // </main>
+    </main>
 
     
   )
