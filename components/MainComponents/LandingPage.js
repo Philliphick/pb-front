@@ -73,7 +73,7 @@ export const Dashboard = () => {
       <div className="">
       <HeroPage />
       </div>
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 sm:max-w-full md:max-w-[982px]">
+      {/* <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 sm:max-w-full md:max-w-[982px]">
         <Carousel autoPlay infiniteLoop>
           {groupedPosts.map((group, index) => (
             <div key={index} className="flex justify-around">
@@ -85,7 +85,7 @@ export const Dashboard = () => {
             </div>
           ))}
         </Carousel> 
-      </div>
+      </div> */}
     </div>
   );
 };
