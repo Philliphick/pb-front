@@ -5,8 +5,7 @@ import ProjectCard from '../ProjectComponents/ProjectCard';
 import HeroPage from '../MainComponents/HeroPage';
 import { Carousel } from 'react-responsive-carousel';
 
-
-export const Dashboard = () => {
+export const LandingPage = () => {
   const [posts, setPosts] = useState([]);
   const [selectedLanguages, setSelectedLanguages] = useState([]);
   const [showSignIn, setShowSignIn] = useState(false);
@@ -66,13 +65,10 @@ export const Dashboard = () => {
     groupedPosts.push(posts.slice(i, i + 3));
   }
 
-  
-  
+
   return (
     <div className="relative">
-      <div className="">
       <HeroPage />
-      </div>
       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 sm:max-w-full md:max-w-[982px]">
         <Carousel autoPlay infiniteLoop>
           {groupedPosts.map((group, index) => (
@@ -90,4 +86,4 @@ export const Dashboard = () => {
   );
 };
 
-export default Dashboard
+export default LandingPage

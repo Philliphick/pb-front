@@ -55,35 +55,17 @@
 // ProjectCard.js
 
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import FullPost from './FullPost';
 import DeletePost from './DeleteButton';
-import MakePost from '../MainComponents/MakePost';
-import axios from 'axios';
+import MakePost from './MakePost';
 
-const ProjectCard = ({ post, selectedLanguages, user }) => {
+const ProjectCard = ({ post, selectedLanguages }) => {
   const [postId, setPostId] = useState(null);
-  const [isUsersPost, setIsUsersPost] = useState(false);
 
   if (selectedLanguages.length > 0 && !selectedLanguages.some(lang => post.tags.includes(lang))) {
     return null;
   }
-
-  useEffect(() => {
-    const checkIsUsersPost = async () => {
-      try {
-        const response = await axios.get(`http://localhost:5001/project/user/${user.id}`);
-        const usersPosts = response.data.posts;
-        setIsUsersPost(usersPosts.some(usersPost => usersPost._id === post._id));
-      } catch (error) {
-        console.error('Error fetching user\'s posts:', error);
-      }
-    };
-
-    if (user) {
-      checkIsUsersPost();
-    }
-  }, [user, post._id]);
 
   const handleButtonClick = () => {
     if (postId === post._id) {
@@ -109,8 +91,7 @@ const ProjectCard = ({ post, selectedLanguages, user }) => {
           View Full Post
         </button>
         <button className="">
-          {/* VV logic incomplete without the post being put inside the user schema VV */}
-        {isUsersPost && <DeletePost _id={post._id} />}
+          <DeletePost _id={post._id} />
         </button>
       </div>
       
@@ -121,3 +102,4 @@ const ProjectCard = ({ post, selectedLanguages, user }) => {
 };
 
 export default ProjectCard;
+
