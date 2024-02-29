@@ -53,7 +53,7 @@ const FullPost = ({ postId, onClose, user, post }) => {
           const res = await axios.get(`http://localhost:5001/project/getUserById/${usersIdForPost}`);
           
           setOwnerOfPost(res.data[0]._id);
-          // Update user data or do something with the response
+          
         } catch (error) {
           console.error('Error fetching users posts:', error);
         }
